@@ -1,0 +1,316 @@
+/* === CSS RESET === */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* === End of CSS RESET === */
+
+body {
+	background: url(../assets/classy_fabric.png);
+	color: white;
+	font-size: 20px;
+	font-family: "Terminal Dosis", sans-serif;
+	text-shadow: 
+		1px 1px 0 transparent,
+		2px 2px 0 #101010;
+	overflow: hidden;
+}
+h1 {
+	font-size: 75px;
+	font-weight: bold;
+	line-height: 1.5em;
+	text-shadow: 
+		2px 2px 0 transparent,
+		4px 4px 0 #101010;
+}
+
+a, a:visited {
+	color: white;
+	text-decoration: none;
+	border-bottom: 2px dotted;
+	transition: color 0.2s;
+}
+
+a:hover {
+	color: #AAA;
+}
+
+a:active {
+	color: lightblue;
+}
+
+.big {
+	display: block;
+	font-size: 45px;
+	font-weight: bold;
+	line-height: 1.3em;
+	margin-bottom: 10px;
+	text-shadow: 
+		2px 2px 0 transparent,
+		4px 4px 0 #101010;
+}
+
+.wrapper div {
+	position: absolute;
+}
+
+nav{
+	position : fixed;
+	z-index : 999;
+	bottom : 0;
+}
+
+nav #h{
+	z-index : 999999999;
+	position : absolute;
+	bottom : 57px;
+	left : 50px;
+	width : 3.8em;
+}
+
+nav #pf{
+	position : absolute;
+	bottom : 20px;
+	left : 10px;
+	width : 3.5em;
+	
+}
+
+nav #pt{
+	position: absolute;
+	bottom : 110px;
+	left : 10px;
+	width : 8.0em;
+}
+
+nav #cM{
+	position : absolute;
+	bottom : 20px;
+	left : 90px;
+	width : 3.9em;
+}
+
+.settings{
+	position: fixed;
+	z-index: 9999999;
+	bottom: 0;
+	background: rgba(10,10,10, 0.5);
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+}
+
+.settings {
+	right: 0;
+	padding: 10px 20px;
+	border-radius: 10px 0 0 0;
+}
+
+.settings a {
+	border: none;
+}
+
+nav {
+	left: 0;
+	border-radius: 0 10px 0 0;
+}
+
+nav li {
+	float: left;
+}
+/*
+nav a {
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	text-align: center;
+	transition: 0.25s;
+}
+*/
+
+.sp-canvas {
+	display: none;
+}
+
+.arrow-left{
+	position: relative;
+	display: inline-block;
+}
+
+.demo { 
+	width: 1000px;
+	top : -250px;
+	left : -200px;
+	font-size: 30px;
+	font-weight: bold;
+	
+}
+
+.demo .arrow-left{
+	font-size: 20px;
+	animation: point-down 0.5s alternate infinite;
+}
+
+.demo #Y{
+	position : absolute;
+	left : 400px;
+	top : 50px;
+}
+
+.demo #B{
+	position : absolute;
+	top : 200px;
+	left : 400px;
+}
+
+.demo #G{
+	position : absolute;
+	top : 200px;
+	left : 650px;
+}
+
+.demo #R{
+	position : absolute;
+	top : 175px;
+	left : 520px;
+}
+
+.description {
+	top: -270px;
+	left: -1400px;
+	width: 1000px;
+}
+
+.description #LG{
+	top : 0px;
+}
+
+.description #R{
+	position : absolute;
+	right : 50px;
+	top : 150px;
+	width : 200px;
+}
+
+.description #Cm{
+	position : absolute;
+	right : 250px;
+	top : 50px;
+	width : 350px;
+}
+
+.syntax {
+	top: -1120px;
+	left: -200px;
+	width: 400px;
+}
+
+.syntax #LG{
+	top : 0px;
+	left : 0px;
+}
+
+.syntax #B{
+	position : absolute;
+	top : 50px;
+	left : 400px;
+	width : 700px;
+}
+
+.syntax #C{
+	position : relative;
+	left : 560px;
+	top : 70px;
+	decoration : none;
+}
+
+
+#lightbox {
+			position:fixed; /* keeps the lightbox window in the current viewport */
+			top:0; 
+			left:0; 
+			width:100%; 
+			height:100%; 
+			background:url("../img/overlay.png") repeat; 
+			text-align:center;
+			z-index : 9999;
+		}
+#lightbox p {
+			text-align:right; 
+			color:#fff; 
+			margin-right:20px; 
+			font-size:12px; 
+		}
+#lightbox img {
+			box-shadow:0 0 25px #111;
+			-webkit-box-shadow:0 0 25px #111;
+			-moz-box-shadow:0 0 25px #111;
+			max-width:940px;
+		}
+
+.scrollbar {
+	top: -250px;
+	left: 1100px;
+	width: 1000px;
+	height : 600px;
+}
+
+.scrollbar #LG{
+	left : -300px;
+}
+
+.scrollbar #Cm{
+	top : -100px;
+	left : 200px;
+	width : 400px;
+}
+
+.scrollbar #R{
+	position : absolute;
+	bottom : 0;
+	left : 800px;
+	width : 300px;
+}
+/*
+@keyframes point-down {
+	from {
+		top: 0;
+	}
+	to {
+		top: 5px;
+	}
+}
+
+@keyframes highlight {
+	to {
+		background: lightblue;
+	}
+}
+*/
