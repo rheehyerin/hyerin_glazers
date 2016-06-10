@@ -14,9 +14,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, secti
 body {
 	line-height: 1;
 }
-ol, ul {
-	list-style: none;
-}
+
 blockquote, q {
 	quotes: none;
 }
@@ -38,7 +36,7 @@ body {
 	text-shadow: 
 		1px 1px 0 transparent,
 		2px 2px 0 #101010;
-	overflow: hidden;
+	overflow : hidden;
 }
 h1 {
 	font-size: 75px;
@@ -49,17 +47,7 @@ h1 {
 		4px 4px 0 #101010;
 }
 
-a, a:visited {
-	color: white;
-	text-decoration: none;
-	border-bottom: 2px dotted;
-	transition: color 0.2s;
-}
-
-a:hover {
-	color: #AAA;
-}
-
+/*
 a:active {
 	color: lightblue;
 }
@@ -74,6 +62,7 @@ a:active {
 		2px 2px 0 transparent,
 		4px 4px 0 #101010;
 }
+*/
 
 .wrapper div {
 	position: absolute;
@@ -114,7 +103,7 @@ nav #cM{
 	left : 90px;
 	width : 3.9em;
 }
-
+/*
 .settings{
 	position: fixed;
 	z-index: 9999999;
@@ -134,7 +123,7 @@ nav #cM{
 .settings a {
 	border: none;
 }
-
+*/
 nav {
 	left: 0;
 	border-radius: 0 10px 0 0;
@@ -165,12 +154,28 @@ nav a {
 }
 
 .demo { 
-	width: 1000px;
 	top : -250px;
 	left : -200px;
 	font-size: 30px;
 	font-weight: bold;
 	
+}
+
+#ex{
+	position :relative;
+	top: 150px;
+}
+
+#change{
+	position : relative;
+	top : 250px;
+	margin : 0;
+	padding : 0;
+	width : auto;
+	height : auto;
+	color : black;
+	text-decoration : none;
+	font-size : 30px;
 }
 
 .demo .arrow-left{
@@ -204,9 +209,9 @@ nav a {
 
 .description {
 	top: -270px;
-	left: -1400px;
-	width: 1000px;
+	left: -1600px;
 }
+
 
 .description #LG{
 	top : 0px;
@@ -214,22 +219,21 @@ nav a {
 
 .description #R{
 	position : absolute;
-	right : 50px;
+	left : 900px;
 	top : 150px;
 	width : 200px;
 }
 
 .description #Cm{
 	position : absolute;
-	right : 250px;
+	left : 500px;
 	top : 50px;
 	width : 350px;
 }
 
 .syntax {
 	top: -1120px;
-	left: -200px;
-	width: 400px;
+	left: -250px;
 }
 
 .syntax #LG{
@@ -237,23 +241,84 @@ nav a {
 	left : 0px;
 }
 
+<!--later B can be just back ground img of #slider -->
+/*
 .syntax #B{
 	position : absolute;
 	top : 50px;
 	left : 400px;
 	width : 700px;
 }
+*/
+.syntax #slider{
+	position : relative;
+ 	overflow: hidden;
+ 	margin: 20px auto 0 auto;
+}
 
+#slider ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style-type : none;
+}
+
+#slider ul li {
+  position: relative;
+  left : 400px;
+  display: block;
+  float : left;
+  margin: 0;
+  padding: 0;
+  width: 700px;
+  height: 450px;
+  background: black;
+  border : 2px solid white;
+  text-align: center;
+
+}
+
+a.control_prev, a.control_next {
+  position: absolute;
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: 15px;
+  height: auto;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+a.control_prev:hover, a.control_next:hover {
+  background : gray;
+  z-index :999%;
+  opacity: 0.3;
+  -webkit-transition: all 0.2s ease;
+}
+
+a.control_prev{
+	top : 200px;
+	left : 400px;
+}
+
+a.control_next{
+	top : 200px;
+	left : 1050px;
+}
+/*
 .syntax #C{
 	position : relative;
 	left : 560px;
 	top : 70px;
-	decoration : none;
 }
-
-
+*/
+/*
 #lightbox {
-			position:fixed; /* keeps the lightbox window in the current viewport */
+			position:fixed; // keeps the lightbox window in the current viewport 
 			top:0; 
 			left:0; 
 			width:100%; 
@@ -274,12 +339,11 @@ nav a {
 			-moz-box-shadow:0 0 25px #111;
 			max-width:940px;
 		}
+*/
 
 .scrollbar {
 	top: -250px;
-	left: 1100px;
-	width: 1000px;
-	height : 600px;
+	left: 1400px;
 }
 
 .scrollbar #LG{
@@ -295,6 +359,7 @@ nav a {
 .scrollbar #R{
 	position : absolute;
 	bottom : 0;
+	top : 200px;
 	left : 800px;
 	width : 300px;
 }

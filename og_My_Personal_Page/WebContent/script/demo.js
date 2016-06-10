@@ -7,11 +7,11 @@ function init() {
 		// Move to 'start' element
 		.moveTo(400, 50, {name: "start"})
 		// Line to 'description' element
-		.lineTo(-800, 50, {name: "description"})
+		.lineTo(-1000, 50, {name: "description"})
 		// line to 'syntax'
 		.lineTo(400, -800, {name: "syntax"})
 		// Continue line to 'scrollbar'
-		.lineTo(1700, 50, {name: "scrollbar"})
+		.lineTo(1900, 50, {name: "scrollbar"})
 		// move to the beginning
 		.lineTo(400, 50, {name:"end"})
 		
