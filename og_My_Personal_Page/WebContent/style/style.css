@@ -270,8 +270,8 @@ nav a {
   float : left;
   margin: 0;
   padding: 0;
-  width: 700px;
-  height: 450px;
+  width: auto;
+  height: auto;
   background: black;
   border : 2px solid white;
   text-align: center;

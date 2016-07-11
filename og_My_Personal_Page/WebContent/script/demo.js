@@ -53,6 +53,7 @@ function init() {
 					$(".follow .count").html("the " + ordinal(data.count + 1) + " kind person to");
 				}
 			});
+	
 	}
 
 
