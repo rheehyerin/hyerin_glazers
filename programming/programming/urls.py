@@ -17,12 +17,14 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
-
+from photo import views as photo_views
+from blog import views as blog_views
 urlpatterns = [
- url(r'^photo/(?P<photo_id>\d+)/$', 'photo.views.single_photo', name='view_single_photo'),
+ url(r'^photo/(?P<pk>\d+)/$', 'photo.views.single_photo', name='view_single_photo'),
  url(r'^photo/$', 'photo.views.single_photo', name='view_single_photo'),
     url(r'^admin/', admin.site.urls),  # when 1st parameter calls, 2nd function  works
-    url(r'^$', 'blog.views.post_list'),
+    url(r'^$', blog_views.post_list, name="home"),
+    url(r'^about/$', blog_views.about, name="about"),
 ]
 
-urlpatterns += static('static_files', document_root = settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

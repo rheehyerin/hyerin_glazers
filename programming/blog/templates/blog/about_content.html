@@ -20,25 +20,21 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="{% url 'home'%}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
+            <li ><a href="{% url 'home' %}">Home</a></li>
+            <li class="active"><a href="{% url 'about' %}">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-  <div class="container">
+     <div class="container">
         <div class="row">
-            {% for post in post_list %}
-                <div class="col-sm-3">
-                        <img src="{{ post.photo.url }}" width = 100px />
-                        <h3>{{ post.title }}</h3>
-                    </a>
-                </div>
-            {% endfor %}
+                        <h3>한양대학교 정보시스템학과</h3>
+                        <h3>94년생</h3>
         </div>
     </div>
-</body>
-</html>
 
+
+    </body>
+    </html>
