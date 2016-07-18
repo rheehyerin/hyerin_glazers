@@ -1,3 +1,5 @@
+{% load bootstrap3 %}
+{% load staticfiles %}
 <!doctype html>
 <html>
 <head>
@@ -23,6 +25,7 @@
             <li ><a href="{% url 'home' %}">Home</a></li>
             <li class="active"><a href="{% url 'about' %}">About</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="{% url 'add_info' %}">Add</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -30,11 +33,19 @@
 
      <div class="container">
         <div class="row">
+        <img src ="{% static 'img/hanyang_symbol.jpg' %}" width = 300px />
                         <h3>한양대학교 정보시스템학과</h3>
                         <h3>94년생</h3>
         </div>
+        {% for video in video_list %}
+                <div align="center">
+                         <h3>{{video.title}}</h3>
+                <video >
+                {{ video.video.url  }}
+                        <source src="{{video.video.url}}" type="video/mp4">
+                </video>
+                </div>
+        {% endfor %}
     </div>
-
-
     </body>
     </html>

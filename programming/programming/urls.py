@@ -19,12 +19,14 @@ from django.conf.urls.static import static
 from django.conf import settings
 from photo import views as photo_views
 from blog import views as blog_views
+from poketmon import views as poketmon_views
 urlpatterns = [
- url(r'^photo/(?P<pk>\d+)/$', 'photo.views.single_photo', name='view_single_photo'),
- url(r'^photo/$', 'photo.views.single_photo', name='view_single_photo'),
+    url(r'^photo/$', photo_views.single_photo, name='view_single_photo'),
     url(r'^admin/', admin.site.urls),  # when 1st parameter calls, 2nd function  works
-    url(r'^$', blog_views.post_list, name="home"),
+    url(r'^$', blog_views.post_list, name="home"), #the 'name' is for html href tagging
     url(r'^about/$', blog_views.about, name="about"),
+    url(r'^add_info/$', blog_views.add, name="add_info"),
+    url(r'^pokemon/$',poketmon_views.pokemon, name="pokemon"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
