@@ -1,5 +1,5 @@
 from django.contrib import admin
-from poketmon.models import User, Pokemon, Place
+from poketmon.models import User, Pokemon, Capture
 # Register your models here.
 
 class UserAdmin(admin.ModelAdmin):
@@ -7,4 +7,4 @@ class UserAdmin(admin.ModelAdmin):
 
 admin.site.register(User, UserAdmin)
 admin.site.register(Pokemon)
-admin.site.register(Place)
+admin.site.register(Capture)

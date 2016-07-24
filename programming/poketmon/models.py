@@ -3,14 +3,9 @@ from django.db import models
 # Create your models here.
 class User(models.Model):
     name = models.CharField(max_length=20)
-    catched_places = models.ManyToManyField('Place')
-    catched_pokemons = models.ManyToManyField('Pokemon')
 
     def __str__(self):
-        return self.name
-
-    def get_catched_pokemons(self):
-        return "\n".join([u.catched_pokemons.name for u in self.catched_pokemons.all()])
+        return 'Trainer#{} - {}'.format(self.id, self.name)
 
 
 class Pokemon(models.Model):
@@ -22,9 +17,11 @@ class Pokemon(models.Model):
     def __str__(self):
         return self.name
 
-class Place(models.Model):
-    place = models.CharField(max_length=10)
+class Capture(models.Model):
+    user = models.ForeignKey(User)
+    pokemon = models.ForeignKey(Pokemon)
+    location = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.place
+        return '{}이(가) {}을(를) {}에서 포획'.format(self.user, self.pokemon, self.location)
 

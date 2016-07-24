@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Post, Portfolio_content
 from blog.forms import VideoForm
+from django.http import HttpResponse
 # Create your views here.
 
 def post_list(request):
@@ -26,4 +27,9 @@ def add(request):
         print(form)
     return render(request, 'blog/add_info.html',{'form':form,})
 
+def mysum(request, x, y=0, z=0):
+    return HttpResponse(int(x)+int(y)+int(z))
 
+def mysum2(request, x):
+    result = sum([int(i) for i in x.split('/')])
+    return HttpResponse(result)
