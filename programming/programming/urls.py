@@ -27,10 +27,6 @@ urlpatterns = [
     url(r'^about/$', blog_views.about, name="about"),
     url(r'^add_info/$', blog_views.add, name="add_info"),
     url(r'^pokemon/$',poketmon_views.pokemon, name="pokemon"),
-    url(r'^sum/(?P<x>\d+)/(?P<y>\d+)/(?P<z>\d+)/$', blog_views.mysum),
-    url(r'^sum/(?P<x>\d+)/(?P<y>\d+)/$', blog_views.mysum),
-    url(r'^sum/(?P<x>\d+)/$', blog_views.mysum),
-    url(r'^sum2/(?P<x>[\d+/]+)/$', blog_views.mysum2),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
