@@ -1,17 +1,10 @@
-<!Doctype html>
-<html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>Pokemon</title>
-        <script type="text/javascript" scr ="{% static js/jquery-3.0.0.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    </head>
-    <body>
-        <div class="container">
-            {% for location in location_list%}
-                {{location}}<br>
-            {% endfor %}
+{% extends 'base.html' %}
 
-        </div>
-    </body>
-</html>
+{% block title %}Location{% endblock %}
+
+{% block content %}
+    {% for location in location_list %}
+        {{ location }} 의 pk 값은 {{ location.id }} 입니다.<br>
+    {% endfor %}
+{% endblock %}
+

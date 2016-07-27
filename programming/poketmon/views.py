@@ -16,7 +16,7 @@ def capture_list(request):
     return render(request, 'poketmon/captures.html', {'captured_list':captured_list})
 
 def trainer_list(request):
-    trainers_list = Trainer.objects.all()
+    trainer_list = Trainer.objects.all()
     return render(request, 'poketmon/trainers.html', {'trainer_list':trainer_list})
 
 def trainer_detail(request, pk):
@@ -30,4 +30,3 @@ def location_list(request):
 def location_detail(request, pk):
     location_detail = get_object_or_404(Location, pk=pk)
     return render(request, 'poketmon/location_detail.html', {'location_detail':location_detail})
-
