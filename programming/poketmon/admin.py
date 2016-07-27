@@ -1,10 +1,12 @@
 from django.contrib import admin
-from poketmon.models import User, Pokemon, Place
+from .models import Trainer, Pokemon, Capture, Location
+from .forms import LocationForm
 # Register your models here.
 
-class UserAdmin(admin.ModelAdmin):
-    display_list =('name', 'get_catched_pokemons')
+class LocationAdmin(admin.ModelAdmin):
+    form = LocationForm
 
-admin.site.register(User, UserAdmin)
+admin.site.register(Trainer)
 admin.site.register(Pokemon)
-admin.site.register(Place)
+admin.site.register(Capture)
+admin.site.register(Location, LocationAdmin)

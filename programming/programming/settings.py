@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'blog',
     'photo',
     'poketmon',
-    'bootstrap3',
 ]
 
 MIDDLEWARE_CLASSES = [

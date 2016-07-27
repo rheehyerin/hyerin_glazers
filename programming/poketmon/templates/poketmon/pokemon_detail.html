@@ -8,13 +8,10 @@
     </head>
     <body>
         <div class="container">
-            {% for user in user_list %}
-            {{user.name}} (이)가
-                {% for pokemon in user.catched_pokemons.all%}
-                '{{pokemon.name}}',
-                {% endfor %} (을)를 잡았습니다.</br>
-            {% endfor %}
-
+            <h3> 포켓몬 이름 : {{ pokemon_detail.name }} </h3>
+            <h4> 포켓몬 공격 수치 : {{ pokemon_detail.attack }} </h4>
+            <h4> 포켓몬 방어 수치 : {{ pokemon_detail.defense }}</h4>
+            <h4> 포켓몬 타입 : {{ pokemon_detail.ptype }}</h4>
         </div>
     </body>
 </html>

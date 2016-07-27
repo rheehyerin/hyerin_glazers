@@ -26,7 +26,13 @@ urlpatterns = [
     url(r'^$', blog_views.post_list, name="home"), #the 'name' is for html href tagging
     url(r'^about/$', blog_views.about, name="about"),
     url(r'^add_info/$', blog_views.add, name="add_info"),
-    url(r'^pokemon/$',poketmon_views.pokemon, name="pokemon"),
+    url(r'^trainers/$', poketmon_views.trainer_list, name="trainers"),
+    url(r'^trainers/(?P<pk>\d+)/$',poketmon_views.trainer_detail, name="trainer_detail"),
+    url(r'^locations/$', poketmon_views.location_list, name="locations"),
+    url(r'^locations/(?P<pk>\d+)/$', poketmon_views.location_detail, name="location_detail"),
+    url(r'^pokemons/$', poketmon_views.pokemon_list, name="pokemons"),
+    url(r'^pokemons/(?P<pk>\d+)/$', poketmon_views.pokemon_detail, name="pokemon_detail"),
+    url(r'^captures/$', poketmon_views.capture_list, name="captures" ),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
