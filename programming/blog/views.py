@@ -26,4 +26,6 @@ def add(request):
         print(form)
     return render(request, 'blog/add_info.html',{'form':form,})
 
+def img_slider(request):
+    return render(request, 'blog/index.html')
 

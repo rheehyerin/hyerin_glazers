@@ -17,10 +17,12 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.conf import settings
+from demo import views as demo_views
 
 
 urlpatterns = [
     url(r'^admin/$', admin.site.urls),
     url(r'^$', include('demo.urls', namespace='demo')),
+    url(r'^img_slider/$', demo_views.img_slider),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

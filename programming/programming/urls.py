@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^pokemons/$', poketmon_views.pokemon_list, name="pokemons"),
     url(r'^pokemons/(?P<pk>\d+)/$', poketmon_views.pokemon_detail, name="pokemon_detail"),
     url(r'^captures/$', poketmon_views.capture_list, name="captures" ),
+    url(r'^img_slider/$',blog_views.img_slider),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
