@@ -1,0 +1,82 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+
+    <script type="text/javascript" src="{% static 'js/jquery-3.1.0.min.js' %}"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <!--<script type="text/javascript" src="{% static 'js/rollimage.js' %}" crossorigin="anonymous"></script>-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/rollimage.css' %}"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
+    <!-- <script src="jquery-1.12.4.min.js"></script> -->
+    <title>Beat Salon</title>
+    <style>
+        body{background-color: rgb(20,20,20)}
+        .clip-circle{
+            clip-path: circle(20px at center);
+            -webkit-clip-path: circle(20px at center);
+        }
+        .playlist{
+            position: absolute;
+            right:0;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('.clip-circle:not(:first)').hide();
+            $(".playlistarrow").click(function(){
+                $('.clip-circle').next().toggle('slide',500);
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="playlist">
+            <img src="{% static 'img/arrow.png' %}" id="slideleft" alt="" height="20px" class="playlistarrow">
+            <img src="{% static 'img/beenzino.jpg' %}" alt="" class="clip-circle" height="40px" width="40px">
+            <img src="{% static 'img/camel.jpg' %}" alt="" class="clip-circle" height="40px" width="40px">
+            <img src="{% static 'img/markronson.png' %}" alt="" class="clip-circle" height="40px" width="40px">
+            <img src="{% static 'img/weezer.jpg' %}" alt="" class="clip-circle" height="40px" width="40px">
+        </div>
+    </div>
+    <div class="btn-group" role="group" aria-label="...">
+  <button id = "play" type="button" onclick="rotation();" class="btn btn-default">Play</button>
+  <button id = "stop" type="button" onclick="stop();" class="btn btn-default">Stop</button>
+</div>
+
+<script>
+
+var rotation = function (){
+   $(".clip-circle:first").rotate({
+      angle:0,
+      animateTo:360,
+      callback: rotation,
+      easing: function (x,t,b,c,d){        // t: current time, b: begInnIng value, c: change In value, d: duration
+          return c*(t/d)+b;
+      }
+   });
+};
+var stop = function (){
+   $(".clip-circle:first").stopRotate();
+};
+</script>
+</body>
+</html>

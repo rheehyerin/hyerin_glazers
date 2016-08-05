@@ -1,8 +1,13 @@
 
-body, html { font-size: 100%;   padding: 0; margin: 0;}
+body, html {   padding: 0; margin: 0;}
+
+body{
+    background-color: black;
+}
 a {
     text-decoration: none;
 }
+
 
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
 .clearfix:before,
@@ -42,6 +47,15 @@ a {
     font-size: 15px;
 }
 
+.clip-circle{
+    clip-path: circle(20px at center);
+    -webkit-clip-path: circle(20px at center);
+}
+.playlist{
+    position: absolute;
+    right:0;
+}
+
 /* menu slide css */
 
 .cbp-spmenu {
@@ -53,16 +67,6 @@ a {
     transition: all 0.3s ease;
 }
 
-.cbp-spmenu a:hover {
-    background: black;
-    opacity:0.4;
-}
-
-
-.cbp-spmenu a:active {
-    background: #afdefa;
-    color: #47a3da;
-}
 
 .cbp-spmenu-horizontal {
     width: 100%;
@@ -71,7 +75,9 @@ a {
     overflow: hidden;
 }
 
-
+.cbp-spmenu-bottom.cbp-spmenu-open {
+    bottom: 0px;
+}
 
 .cbp-spmenu-bottom {
     bottom: -150px;
@@ -95,34 +101,114 @@ a {
 }
 
 /* menu slide button css */
-.botton_default{
-    position : fixed;
+.button_default{
+    /*position : relative;*/
+    /*text-align:bottom;*/
 }
 
-.botton_default button{
-    position : relative;
-    z-index : 9999;
+.button_default #showBottom img{
+    position : absolute;
+    bottom:0;
+    right:0;
+    height:30px;
+    opacity: 0.5;
+    display:block;
 }
 
 /* img slider css in menu slider */
 
 
-#slider2{
-    position:relative;
-    overflow:hidden;
-}
 
 #slider2{
+    position:absolute;
+    overflow:hidden;
+    width: 100%;
+    height: 150px;
+    left:25%;
+}
+
+#slider2 ul{
+
     position:relative;
-    margin:0;
+    margin: 0;
     padding:0;
     list-style:none;
+    height:150px;
 }
 
 #slider2 ul li{
     position:relative;
-    display: block;
     float: left;
     margin:0;
     padding: 0;
+    width:150px;
+    height:150px;
+
+}
+
+#slider2 ul li a{
+    position:relative;
+    margin-top: 20px
+    font-size:100px;
+}
+
+#slider2 ul li a:active{
+    background: #afdefa;
+    color: #47a3da;
+}
+
+#slider2 ul li a:hover{
+    background: black;
+    opacity:0.4;
+}
+
+#slider2 ul li a img{
+    margin-top:20px;
+    width:130px;
+    height:120px;
+}
+
+a.close_menu{
+    position: absolute;
+    z-index:999;
+    right:0;
+}
+
+a.close_menu img{
+    position:absolute;
+    top:0;
+    right:0;
+    width:30px;
+}
+
+a.control_prev, a.control_next{
+    position:absolute;
+    bottom:0px;
+    z-index:999;
+    text-decoration:none;
+    font-weight:90px;
+    opacity:0.8;
+    cursor:pointer;
+}
+
+a.control_prev img{
+    height:90px;
+}
+
+a.control_next img{
+    height:90px;
+}
+
+a.control_prev:hover, a.control_next:hover{
+    opacity:1;
+    -webkit-transition:all 0.2s ease;
+}
+
+a.control_prev{
+    border-radius: 0 2px 2px 0;
+}
+
+a.control_next{
+    right:0;
+    border-radius:2px 0 0 2px;
 }

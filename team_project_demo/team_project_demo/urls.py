@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^admin/$', admin.site.urls),
     url(r'^$', include('demo.urls', namespace='demo')),
     url(r'^img_slider/$', demo_views.img_slider),
+    url(r'^sliderEx/$', demo_views.slider_ex),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

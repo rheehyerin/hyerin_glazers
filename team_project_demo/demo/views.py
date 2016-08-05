@@ -7,3 +7,6 @@ def index(request):
 
 def img_slider(request):
     return render(request, 'demo/img_slider.html',{})
+
+def slider_ex(request):
+    return render(request, 'demo/slider_ex.html',{})
